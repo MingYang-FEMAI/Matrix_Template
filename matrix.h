@@ -23,6 +23,7 @@ class Matrix {
 private:
     int _rows;
     int _cols;
+    T* _p;                                                     // 一维数组，按列存储，从0开始,
     T* L;                                                   //不可从外部访问
     T* U;                                              //不可从外部访问
     T detm;                                            //行列式
@@ -47,7 +48,6 @@ public:
     Matrix<T> zeros();    // 生成全为0的矩阵  
     Matrix<T> rands(T min, T max);    // 生成随机数填充的矩阵 
     Matrix<T> rands();   // 生成随机数填充的矩阵   重载
-    T* _p;                                                     // 一维数组，按列存储，从0开始,
     unsigned int getRow() const;
     unsigned int getCol() const;
     T get(unsigned int x, unsigned int y);          //
